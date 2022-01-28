@@ -4,7 +4,7 @@ Most Linux distro's ship with SystemD these days - which both has a big yay- and
 
 Sometimes however - especially in professional environments - you might not be able to avoid using SystemD.
 
-The very least you could do in that case is to isolate your services as much as possible.
+The very least you could do in that case is to isolate your services as much as possible. And even if you _do_ like systemd, isolating your services is still a very good practice!
 
 
 
@@ -13,7 +13,8 @@ SystemD does offer some nice tools on that, some of which take some trial-and-er
 
 ## About this project.
 
-This project is distributes as-is. That this works for me doesn't neccisarily mean it will work for you.
+This project is distributed as-is. That this works for me doesn't neccisarily mean it will work for you.
+The services listed in this repository have been tested to work on the latest _Debian Stable_ (Bullseye).
 
 In example: The DNSMasq service file has been tested in a case where DNSMasq only serves DNS, no DHCP. So it might be possible that SystemD will just kill it as soon as you start doing DHCP..
 
