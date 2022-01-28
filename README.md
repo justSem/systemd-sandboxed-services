@@ -47,6 +47,15 @@ This method is the most automated means possible as systemd will take care of th
 _Note: You'll still need to restart the affected services__
 
 
+## Warning
+
+If you decide to start tinkering around yourself, please be especially careful around the `SystemCallFilter=` expressions.
+
+Unlike `CapabilityBoundingSet=` which just causes your service to not start if you misconfigure it, the SystemCallFilter will make Systemd _kill_ your service as soon as it get's triggered.
+
+A simple example: Let's say your service doesn't require any filesystem operations until you decide to interact with it - but you don't have `@basic-io @file-system` in your SystemCallFilter whitelist. Then interacting with said service might cause it's first I/O event and thus trigger the SystemCallFilter - resulting in SystemD immediately killing the service.
+
+
 ## Tips and recommendations.
 
 An easy way to asses how 'open' your services are is by running `systemd-analyze security`
