@@ -3,7 +3,7 @@ name: Request to include a new service
 about: Use this issue type to request the inclusion of a new service.
 title: "[NEW]"
 labels: ''
-assignees: ''
+assignees: justSem
 
 ---
 
